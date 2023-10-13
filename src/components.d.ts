@@ -6,6 +6,14 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface MyAngularMathjax {
+    }
+    interface MyButton {
+    }
+    interface MyCard {
+        "email": string;
+        "name": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -20,19 +28,58 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface MyMathjax {
+        "content": string;
+    }
 }
 declare global {
+    interface HTMLMyAngularMathjaxElement extends Components.MyAngularMathjax, HTMLStencilElement {
+    }
+    var HTMLMyAngularMathjaxElement: {
+        prototype: HTMLMyAngularMathjaxElement;
+        new (): HTMLMyAngularMathjaxElement;
+    };
+    interface HTMLMyButtonElement extends Components.MyButton, HTMLStencilElement {
+    }
+    var HTMLMyButtonElement: {
+        prototype: HTMLMyButtonElement;
+        new (): HTMLMyButtonElement;
+    };
+    interface HTMLMyCardElement extends Components.MyCard, HTMLStencilElement {
+    }
+    var HTMLMyCardElement: {
+        prototype: HTMLMyCardElement;
+        new (): HTMLMyCardElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLMyMathjaxElement extends Components.MyMathjax, HTMLStencilElement {
+    }
+    var HTMLMyMathjaxElement: {
+        prototype: HTMLMyMathjaxElement;
+        new (): HTMLMyMathjaxElement;
+    };
     interface HTMLElementTagNameMap {
+        "my-angular-mathjax": HTMLMyAngularMathjaxElement;
+        "my-button": HTMLMyButtonElement;
+        "my-card": HTMLMyCardElement;
         "my-component": HTMLMyComponentElement;
+        "my-mathjax": HTMLMyMathjaxElement;
     }
 }
 declare namespace LocalJSX {
+    interface MyAngularMathjax {
+    }
+    interface MyButton {
+    }
+    interface MyCard {
+        "email"?: string;
+        "name"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -47,15 +94,26 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface MyMathjax {
+        "content"?: string;
+    }
     interface IntrinsicElements {
+        "my-angular-mathjax": MyAngularMathjax;
+        "my-button": MyButton;
+        "my-card": MyCard;
         "my-component": MyComponent;
+        "my-mathjax": MyMathjax;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "my-angular-mathjax": LocalJSX.MyAngularMathjax & JSXBase.HTMLAttributes<HTMLMyAngularMathjaxElement>;
+            "my-button": LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
+            "my-card": LocalJSX.MyCard & JSXBase.HTMLAttributes<HTMLMyCardElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "my-mathjax": LocalJSX.MyMathjax & JSXBase.HTMLAttributes<HTMLMyMathjaxElement>;
         }
     }
 }

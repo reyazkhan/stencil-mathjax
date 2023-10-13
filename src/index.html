@@ -4,11 +4,458 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
-
     <script type="module" src="/build/my-first-stencil.esm.js"></script>
     <script nomodule src="/build/my-first-stencil.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script> -->
+    <!-- <script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js"></script> -->
+    <!-- <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js"></script> -->
+    <!-- <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+
+    <!-- <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js", "fast-preview.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "HTML-CSS": { fonts: ["TeX"], linebreaks: { automatic: true } },
+        showProcessingMessages: true,
+      });
+      MathJax.Hub.Register.StartupHook("End",function () { console.log('Mathjax loaded.');});
+    </script> -->
+    <!-- <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        MathJax.Hub?.Queue(['Typeset', MathJax.Hub, document.getElementById('math-content')]);
+      });
+    </script> -->
+    <style>
+      mjx-utext {
+        display: inline !important;
+      }
+    </style>
   </head>
+
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
+    <!-- <my-card name="reyaz" email="reyaz.khan@gmail.com"></my-card> -->
+
+    <!-- <my-button></my-button> -->
+
+    <!-- <my-mathjax content="<p>\begin{eqnarray*} x^2-1 &amp; = &amp; 0 \\ (x+1)(x-1) &amp; = &amp; 0 \\ x=-1 &amp; or &amp; x=1 . \end{eqnarray*}</p>"></my-mathjax> -->
+
+    <!-- <my-mathjax content="This is an inline equation: \( E = mc^2 \)"></my-mathjax> -->
+
+    <!-- <my-mathjax
+      content='<p>dfsd</p><p><math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mn>3</mn></msqrt><mo>+</mo><msup><mn>3</mn><mn>4</mn></msup></math></p><p><img title="3.png" src="https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0i7v284ibtz432z1ydrucd749.png" alt="" /></p>'
+    ></my-mathjax> -->
+
+    <!-- <my-mathjax
+      content="A useful relation in many CS contexts is that, for \(n \ge 0\), 
+  \[\sum_{i=0}^n i = \frac{n(n+1)}{2}.\]"
+    ></my-mathjax> -->
+
+    <!-- <my-mathjax content="कहुसबोो पागाल हाि, चहोति सि मोति सि"></my-mathjax> -->
+
+    <!-- <my-mathjax
+      content='<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#2330;&#2366;&#2354;</mi><mo>&#160;</mo><mo>=</mo><mo>&#160;</mo><mfrac><mi>&#2360;&#2366;&#2350;&#2366;&#2351;</mi><mi>&#2342;&#2369;&#2352;&#2367;</mi></mfrac></math></p>'
+    ></my-mathjax> -->
+
+    <!-- <my-angular-mathjax
+      content='<p>dfsd</p><p><math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mn>3</mn></msqrt><mo>+</mo><msup><mn>3</mn><mn>4</mn></msup></math></p><p><img title="3.png" src="https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0i7v284ibtz432z1ydrucd749.png" alt="" /></p>'
+    ></my-angular-mathjax> -->
+    <!-- <my-angular-mathjax content="<p>\begin{eqnarray*} x^2-1 &amp; = &amp; 0 \\ (x+1)(x-1) &amp; = &amp; 0 \\ x=-1 &amp; or &amp; x=1 . \end{eqnarray*}</p>"></my-angular-mathjax> -->
+
+    <!-- <my-angular-mathjax
+      content="A useful relation in many CS contexts is that, for \(n \ge 0\), 
+  \[\sum_{i=0}^n i = \frac{n(n+1)}{2}.\]"
+    ></my-angular-mathjax> -->
+
+    <!-- <my-angular-mathjax
+      content='<p>dsdsds<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>A</mi><mo>&#160;</mo><mo>=</mo><mfenced open="[" close="]"><mtable><mtr><mtd><mtable><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd></mtr></mtable></mtd></mtr><mtr><mtd><mn>4</mn></mtd></mtr></mtable></mfenced></math></p>'
+    ></my-angular-mathjax> -->
+
+    <!-- <my-angular-mathjax
+      content="<p>\(D=\left|\begin{array}{lll}a &amp; b &amp; c \\ b &amp; c &amp; a \\ c &amp; a &amp; b\end{array}\right|\) and \(D=0\) is condition of concurrency<br />\(<br />D=-\left(a^3+b^3+c^3-3 a b c\right)=(a+b+c)\left(a^2+b^2+c^2-a b-b c-c a\right)<br />\)<br />(A) If \(a+b+c=0\)<br />But \(\sum a^2 \neq \sum a b \quad\) i.e., \(a, b, c\) are not all equal, then \(D=0\)<br />Hence lines are concurrent<br />\(\Rightarrow \quad(q)\)</p>
+<p>(B) If \(a+b+c=0\) and \(\sum a^2=\sum a b \Rightarrow a=b=c \quad \therefore \quad a=0 ; b=0 ; c=0\)<br />\(\Rightarrow \quad\) Lines becomes identical and of the form \(0 x+0 y+0=0\)<br />Any ordered pair \((x, y)\) will satisfy<br />\(\Rightarrow \quad\) Complete \(x y\) plane<br />\(\Rightarrow \quad( p )\)<br />(C) If \(a+b+c \neq 0\) and \(\sum a^2 \neq \sum a b\)<br />\(\Rightarrow \quad a=b=c\)<br />Hence lines becomes neither identical nor coincident \(\quad \Rightarrow \quad\) (r)<br />(D) \(\quad \sum a^2=\sum a b \Rightarrow a=b=c\)<br />Hence the system represents coincident lines \(x+y+1=0\)</p>"
+    ></my-angular-mathjax> -->
+
+    <!-- <my-angular-mathjax
+      content="<p>Consider the system of 3 linear equations<br />\(<br />\begin{aligned}<br />&amp; a x+b y+c=0 \\<br />&amp; b x+c y+a=0 \\<br />&amp; c x+a y+b=0<br />\end{aligned}<br />\)<br />where \(a, b, c \in R\).</p>
+<p>\begin{equation}<br />\begin{array}{|l|l|c|l|}<br />\hline &amp;{\text { Column 1 }} &amp; &amp;{\text { Column 2 }} \\<br />\hline \text { (A) } &amp; \begin{array}{l}<br />\text { If } a+b+c=0 \text { and } a^2+b^2+c^2 \neq a b+b c+c a, \text { then } \\<br />\text { the system represents }<br />\end{array} &amp; \text { (P) } &amp; \text { Entire } x y \text { plane } \\<br />\hline \text { (B) } &amp; \begin{array}{l}<br />\text { If } a+b+c=0 \text { and } a^2+b^2+c^2=a b+b c+c a, \text { then } \\<br />\text { the system represents }<br />\end{array} &amp; \text { (Q) } &amp; \text { Concurrent lines } \\<br />\hline \text { (C) } &amp; \begin{array}{l}<br />\text { If } a+b+c \neq 0 \text { and } a^2+b^2+c^2 \neq a b+b c+c a, \text { then } \\<br />\text { the system represents }<br />\end{array} &amp; \text { (R) } &amp; \text { Coincident lines } \\<br />\hline \text { (D) } &amp; \begin{array}{l}<br />\text { If } a+b+c \neq 0 \text { and } a^2+b^2+c^2=a b+b c+c a, \text { then } \\<br />\text { the system represents }<br />\end{array} &amp; \text { (S) } &amp; \begin{array}{l}<br />\text { Neither coincident nor } \\<br />\text { concurrent lines }<br />\end{array} \\<br />\hline<br />\end{array}<br />\end{equation}</p>"
+    ></my-angular-mathjax> -->
+
+    <!-- <my-angular-mathjax>
+      <p>
+        Consider the system of 3 linear equations<br />\(<br />\begin{aligned}<br />&amp; a x+b y+c=0 \\<br />&amp; b x+c y+a=0 \\<br />&amp; c x+a y+b=0<br />\end{aligned}<br />\)<br />where
+        \(a, b, c \in R\).
+      </p>
+      <p>
+        \begin{equation}<br />\begin{array}{|l|l|c|l|}<br />\hline &amp;{\text { Column 1 }} &amp; &amp;{\text { Column 2 }} \\<br />\hline \text { (A) } &amp; \begin{array}{l}<br />\text
+        { If } a+b+c=0 \text { and } a^2+b^2+c^2 \neq a b+b c+c a, \text { then } \\<br />\text { the system represents }<br />\end{array} &amp; \text { (P) } &amp; \text { Entire
+        } x y \text { plane } \\<br />\hline \text { (B) } &amp; \begin{array}{l}<br />\text { If } a+b+c=0 \text { and } a^2+b^2+c^2=a b+b c+c a, \text { then } \\<br />\text {
+        the system represents }<br />\end{array} &amp; \text { (Q) } &amp; \text { Concurrent lines } \\<br />\hline \text { (C) } &amp; \begin{array}{l}<br />\text { If } a+b+c
+        \neq 0 \text { and } a^2+b^2+c^2 \neq a b+b c+c a, \text { then } \\<br />\text { the system represents }<br />\end{array} &amp; \text { (R) } &amp; \text { Coincident
+        lines } \\<br />\hline \text { (D) } &amp; \begin{array}{l}<br />\text { If } a+b+c \neq 0 \text { and } a^2+b^2+c^2=a b+b c+c a, \text { then } \\<br />\text { the system
+        represents }<br />\end{array} &amp; \text { (S) } &amp; \begin{array}{l}<br />\text { Neither coincident nor } \\<br />\text { concurrent lines }<br />\end{array} \\<br />\hline<br />\end{array}<br />\end{equation}
+      </p>
+    </my-angular-mathjax> -->
+
+    <!-- <my-angular-mathjax>
+      <table style="border-collapse: collapse; width: 100%" border="1">
+        <tbody>
+          <tr>
+            <td style="width: 30.5681%">column1</td>
+            <td style="width: 30.5681%">column2</td>
+            <td style="width: 30.5681%">column3</td>
+          </tr>
+          <tr>
+            <td style="width: 30.5681%">reyaz</td>
+            <td style="width: 30.5681%">vishal</td>
+            <td style="width: 30.5681%">khus</td>
+          </tr>
+        </tbody>
+      </table>
+    </my-angular-mathjax> -->
+
+    <!-- <div id="math-content">
+      <p>\( x^2-1 = 0 \)</p>
+      <p>\[ x^2-1 = 0 \]</p>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>A</mi>
+        <mo> </mo>
+        <mo>=</mo>
+        <mfenced open="[" close="]">
+          <mtable>
+            <mtr>
+              <mtd><mn>1</mn></mtd>
+            </mtr>
+            <mtr>
+              <mtd><mn>2</mn></mtd>
+            </mtr>
+            <mtr>
+              <mtd><mn>3</mn></mtd>
+            </mtr>
+          </mtable>
+        </mfenced>
+      </math>
+    </div> -->
+    <!-- <div id="math-content">x^2-1\;=\;0\\(x+1)(x-1)\;=\;0\\x=-1\;or\;x=1</div> -->
+    <!-- <div id="math-content">
+      <p>
+        Consider the system of 3 linear equations<br />\(<br />\begin{aligned}<br />&amp; a x+b y+c=0 \\<br />&amp; b x+c y+a=0 \\<br />&amp; c x+a y+b=0<br />\end{aligned}<br />\)<br />where
+        \(a, b, c \in R\).
+      </p>
+      <p>
+        \begin{equation}<br />\begin{array}{|l|l|c|l|}<br />\hline &amp;{\text { Column 1 }} &amp; &amp;{\text { Column 2 }} \\<br />\hline \text { (A) } &amp; \begin{array}{l}<br />\text
+        { If } a+b+c=0 \text { and } a^2+b^2+c^2 \neq a b+b c+c a, \text { then } \\<br />\text { the system represents }<br />\end{array} &amp; \text { (P) } &amp; \text { Entire
+        } x y \text { plane } \\<br />\hline \text { (B) } &amp; \begin{array}{l}<br />\text { If } a+b+c=0 \text { and } a^2+b^2+c^2=a b+b c+c a, \text { then } \\<br />\text {
+        the system represents }<br />\end{array} &amp; \text { (Q) } &amp; \text { Concurrent lines } \\<br />\hline \text { (C) } &amp; \begin{array}{l}<br />\text { If } a+b+c
+        \neq 0 \text { and } a^2+b^2+c^2 \neq a b+b c+c a, \text { then } \\<br />\text { the system represents }<br />\end{array} &amp; \text { (R) } &amp; \text { Coincident
+        lines } \\<br />\hline \text { (D) } &amp; \begin{array}{l}<br />\text { If } a+b+c \neq 0 \text { and } a^2+b^2+c^2=a b+b c+c a, \text { then } \\<br />\text { the system
+        represents }<br />\end{array} &amp; \text { (S) } &amp; \begin{array}{l}<br />\text { Neither coincident nor } \\<br />\text { concurrent lines }<br />\end{array} \\<br />\hline<br />\end{array}<br />\end{equation}
+      </p>
+    </div> -->
+    <!-- <div id="math-content">
+      <p>
+        \(D=\left|\begin{array}{lll}a &amp; b &amp; c \\ b &amp; c &amp; a \\ c &amp; a &amp; b\end{array}\right|\) and \(D=0\) is condition of concurrency<br />\(<br />D=-\left(a^3+b^3+c^3-3
+        a b c\right)=(a+b+c)\left(a^2+b^2+c^2-a b-b c-c a\right)<br />\)<br />(A) If \(a+b+c=0\)<br />But \(\sum a^2 \neq \sum a b \quad\) i.e., \(a, b, c\) are not all equal, then
+        \(D=0\)<br />Hence lines are concurrent<br />\(\Rightarrow \quad(q)\)
+      </p>
+      <p>
+        (B) If \(a+b+c=0\) and \(\sum a^2=\sum a b \Rightarrow a=b=c \quad \therefore \quad a=0 ; b=0 ; c=0\)<br />\(\Rightarrow \quad\) Lines becomes identical and of the form \(0
+        x+0 y+0=0\)<br />Any ordered pair \((x, y)\) will satisfy<br />\(\Rightarrow \quad\) Complete \(x y\) plane<br />\(\Rightarrow \quad( p )\)<br />(C) If \(a+b+c \neq 0\) and
+        \(\sum a^2 \neq \sum a b\)<br />\(\Rightarrow \quad a=b=c\)<br />Hence lines becomes neither identical nor coincident \(\quad \Rightarrow \quad\) (r)<br />(D) \(\quad \sum
+        a^2=\sum a b \Rightarrow a=b=c\)<br />Hence the system represents coincident lines \(x+y+1=0\)
+      </p>
+    </div> -->
+    <!-- <div id="math-content">
+      <p>
+        dsdsds<math xmlns="http://www.w3.org/1998/Math/MathML"
+          ><mi>A</mi><mo>&#160;</mo><mo>=</mo
+          ><mfenced open="[" close="]"
+            ><mtable
+              ><mtr
+                ><mtd
+                  ><mtable
+                    ><mtr
+                      ><mtd><mn>1</mn></mtd></mtr
+                    ><mtr
+                      ><mtd><mn>2</mn></mtd></mtr
+                    ><mtr
+                      ><mtd><mn>3</mn></mtd></mtr
+                    ></mtable
+                  ></mtd
+                ></mtr
+              ><mtr
+                ><mtd><mn>4</mn></mtd></mtr
+              ></mtable
+            ></mfenced
+          ></math
+        >
+      </p>
+    </div> -->
+    <!-- <div id="math-content">A useful relation in many CS contexts is that, for \(n \ge 0\), \[\sum_{i=0}^n i = \frac{n(n+1)}{2}.\]</div> -->
+    <!-- <div id="math-content">
+      <p>dfsd</p>
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"
+          ><msqrt><mn>3</mn></msqrt
+          ><mo>+</mo><msup><mn>3</mn><mn>4</mn></msup></math
+        >
+      </p>
+      <p><img title="3.png" src="https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0i7v284ibtz432z1ydrucd749.png" alt="" /></p>
+    </div> -->
+    <!-- <div id="math-content">
+      <p>\begin{eqnarray*} x^2-1 &amp; = &amp; 0 \\ (x+1)(x-1) &amp; = &amp; 0 \\ x=-1 &amp; or &amp; x=1 . \end{eqnarray*}</p>
+    </div> -->
+    <!-- <div id="math-content">कहुसबोो पागाल हाि, चहोति सि मोति सि</div> -->
+
+    <!-- <div id="math-content">
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"
+          ><mi>&#2330;&#2366;&#2354;</mi><mo>&#160;</mo><mo>=</mo><mo>&#160;</mo
+          ><mfrac><mi>&#2360;&#2366;&#2350;&#2366;&#2351;</mi><mi>&#2342;&#2369;&#2352;&#2367;</mi></mfrac></math
+        >
+      </p>
+    </div> -->
+
+    <!-- <div id="math-content">
+      <p>Given that,</p>
+      <p>SI on Rs. x is half the SI on Rs. y</p>
+      <p>Let the Simple interest on Rs x is&nbsp;<strong>Rs. s</strong></p>
+      <p>Then,</p>
+      <p>Simple interest on Rs y will be&nbsp;<strong>Rs. 2s</strong></p>
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"
+          ><mo>&#8658;</mo><mi>S</mi><mi>I</mi><mo>=</mo
+          ><mfrac
+            ><mrow><mi>P</mi><mo>&#215;</mo><mi>R</mi><mo>&#215;</mo><mi>T</mi></mrow
+            ><mn>100</mn></mfrac
+          ></math
+        >
+      </p>
+      <p>Then,</p>
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"
+          ><mo>&#8658;</mo><mi>s</mi><mo>=</mo
+          ><mfrac
+            ><mrow><mi>x</mi><mo>&#215;</mo><mn>7</mn><mo>&#215;</mo><mn>2</mn></mrow
+            ><mn>100</mn></mfrac
+          ><mo>&#160;</mo><mo>&#160;</mo><mi>\&#160;</mi><mo>&#160;</mo><mo>&#8658;</mo><mn>100</mn><mi>s</mi><mo>=</mo><mn>14</mn><mi>x</mi><mo>&#160;</mo></math
+        >
+      </p>
+      <p>Also,</p>
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"
+          ><mo>&#160;</mo><mo>&#8658;</mo><mn>2</mn><mo>&#160;</mo><mi>s</mi><mo>=</mo
+          ><mfrac
+            ><mrow><mi>y</mi><mo>&#215;</mo><mn>17</mn><mo>.</mo><mn>5</mn><mo>&#215;</mo><mn>3</mn></mrow
+            ><mn>100</mn></mfrac
+          ><mo>&#160;</mo><mo>&#160;</mo><mi>\&#160;</mi><mo>&#160;</mo><mo>&#8658;</mo><mn>200</mn><mo>&#160;</mo><mi>s</mi><mo>=</mo><mn>52</mn><mo>.</mo><mn>5</mn><mi>y</mi
+          ><mo>&#160;</mo></math
+        >
+      </p>
+      <p>On substituting the value, we get</p>
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"
+          ><mo>&#8658;</mo><mn>2</mn><mo>(</mo><mn>14</mn><mi>x</mi><mo>)</mo><mo>=</mo><mn>52</mn><mo>.</mo><mn>5</mn><mi>y</mi></math
+        >
+      </p>
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"><mo>&#8658;</mo><mn>28</mn><mi>x</mi><mo>=</mo><mn>52</mn><mo>.</mo><mn>5</mn><mi>y</mi></math>
+      </p>
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"><mo>&#10233;</mo><mn>4</mn><mi>x</mi><mo>=</mo><mn>7</mn><mo>.</mo><mn>5</mn><mi>y</mi></math>
+      </p>
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"><mo>&#8658;</mo><mn>8</mn><mi>x</mi><mo>=</mo><mn>15</mn><mi>y</mi></math>
+      </p>
+    </div> -->
+
+    <!-- <div id="math-content">
+      <p>मान लें कि,</p>
+      <p>x रुपये पर साधारण ब्याज y रुपये पर साधारण ब्याज का आधा है।&nbsp;</p>
+      <p>माना x रुपये पर साधारण ब्याज&nbsp; s रुपये है।</p>
+      <p>तब, y रुपये पर साधारण ब्याज 2s रुपये होगा।&nbsp;</p>
+      <p><span class="math inline">\(\Rightarrow SI = \frac{P \times R \times T}{100}\)</span></p>
+      <p>तब,</p>
+      <p><span class="math inline">\(\text{ } \Rightarrow s = \frac{x \times 7 \times 2}{100}\ \ \&nbsp;&nbsp;\Rightarrow 100s = 14x\ \)</span></p>
+      <p>&nbsp;</p>
+      <p><span class="math inline">\(&nbsp; \Rightarrow 2\ s = \frac{y \times 17.5 \times 3}{100}\ \ \&nbsp;&nbsp;\Rightarrow 200\ s = 52.5y\ \)</span></p>
+      <p>&nbsp;</p>
+      <p><span class="math inline">\(\Rightarrow 2(14x) = 52.5y\)</span></p>
+      <p><span class="math inline">\(\Rightarrow 28x = 52.5y\)</span></p>
+      <p><span class="math inline">\(\Longrightarrow 4x = 7.5y\)</span></p>
+      <p><span class="math inline">\(\Rightarrow 8x = 15y\)</span></p>
+    </div> -->
+
+    <!-- <div id="math-content">
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"
+          ><mtext>Income</mtext><mfenced><mtext>typed</mtext></mfenced
+          ><mo>&#8594;</mo><mo>(</mo><mn>100</mn><mo>+</mo><mn>48</mn><mo>)</mo><mo>%</mo><mo>=</mo><mn>148</mn><mo>%</mo><mspace linebreak="newline"></mspace><mtext>Income</mtext
+          ><mfenced><mtext>extra</mtext></mfenced
+          ><mo>&#8594;</mo><mn>148</mn><mo>%</mo><mo>-</mo><mn>134</mn><mo>%</mo><mo>=</mo><mn>14</mn><mo>%</mo
+          ><mfenced
+            ><mrow
+              ><mtext>each</mtext><mfenced><mtext>month</mtext></mfenced></mrow
+            ></mfenced
+          ><mspace linebreak="newline"></mspace><mn>4</mn><mfenced><mtext>month</mtext></mfenced
+          ><mo>&#8594;</mo><mn>4</mn><mo>&#215;</mo><mn>14</mn><mo>%</mo><mo>=</mo><mn>56</mn><mo>%</mo><mspace linebreak="newline"></mspace><mn>134</mn><mo>%</mo><mo>-</mo
+          ><mn>56</mn><mo>%</mo><mo>=</mo><mn>78</mn><mo>%</mo><mspace linebreak="newline"></mspace><mn>78</mn><mo>%</mo><mo>=</mo><mn>15600</mn
+          ><mspace linebreak="newline"></mspace><mn>1</mn><mo>%</mo><mo>=</mo><mn>200</mn><mspace linebreak="newline"></mspace><mn>134</mn><mo>%</mo><mo>=</mo><mn>134</mn
+          ><mo>&#215;</mo><mn>200</mn><mo>=</mo><mn>26800</mn><mo>.</mo></math
+        >
+      </p>
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>I</mi><mi>n</mi><mi>c</mi><mi>o</mi><mi>m</mi><mi>e</mi><mo>&#8594;</mo><mn>100</mn><mo>%</mo></math>
+      </p>
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"
+          ><mtext>Income</mtext><mfenced><mtext>new</mtext></mfenced
+          ><mo>&#8594;</mo><mo>(</mo><mn>100</mn><mo>+</mo><mn>34</mn><mo>)</mo><mo>%</mo><mo>=</mo><mn>134</mn><mo>%</mo></math
+        >
+      </p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </div> -->
+
+    <!-- <div id="math-content">
+      \(वेतन \rightarrow 100\%\) \(\text{वेतन}\left( \text{नया} \right) \rightarrow (100 + 34)\% = 134\%\) \(\text{वेतन}\left( \text{टाइप्ड } \right) \rightarrow (100 + 48)\% =
+      148\%\) \(\text{वेतन}\left( \text{अतिरिक्त } \right) \rightarrow 148\% - 134\% = 14\%\left( \text{each}\left( \text{month} \right) \right)\) \(4\left( \text{month} \right)
+      \rightarrow 4 \times 14\% = 56\%\) \(134\% - 56\% = 78\%\) \(78\% = 15600\) \(1\% = 200\) \(134\% = 134 \times 200 = 26800.\)
+    </div> -->
+
+    <!-- <div id="math-content">
+      <p>Let the numbers be <span class="math inline">\(7x,9x\)</span> and <span class="math inline">\(6x\)</span></p>
+      <p><span class="math inline">\(\therefore\ 7x + 6x = 117\text{ }\&nbsp;&nbsp;\Rightarrow x = 9\ \)</span></p>
+      <p><span class="math inline">\(\therefore\ \)</span> The number with highest value</p>
+      <p><span class="math inline">\(= 9x\text{}\&nbsp;&nbsp;= 9 \times 9 = 81\ \)</span></p>
+    </div> -->
+
+    <!-- <my-angular-mathjax> inside component </my-angular-mathjax>
+    <my-angular-mathjax>
+      <p>Let the numbers be <span class="math inline">\(7x,9x\)</span> and <span class="math inline">\(6x\)</span></p>
+      <p><span class="math inline">\(\therefore\ 7x + 6x = 117\text{ }\&nbsp;&nbsp;\Rightarrow x = 9\ \)</span></p>
+      <p><span class="math inline">\(\therefore\ \)</span> The number with highest value</p>
+      <p><span class="math inline">\(= 9x\text{}\&nbsp;&nbsp;= 9 \times 9 = 81\ \)</span></p>
+    </my-angular-mathjax>
+    <my-angular-mathjax>
+      \(वेतन \rightarrow 100\%\) \(\text{वेतन}\left( \text{नया} \right) \rightarrow (100 + 34)\% = 134\%\) \(\text{वेतन}\left( \text{टाइप्ड } \right) \rightarrow (100 + 48)\% =
+      148\%\) \(\text{वेतन}\left( \text{अतिरिक्त } \right) \rightarrow 148\% - 134\% = 14\%\left( \text{each}\left( \text{month} \right) \right)\) \(4\left( \text{month} \right)
+      \rightarrow 4 \times 14\% = 56\%\) \(134\% - 56\% = 78\%\) \(78\% = 15600\) \(1\% = 200\) \(134\% = 134 \times 200 = 26800.\)
+    </my-angular-mathjax> -->
+
+    <!-- <my-angular-mathjax>
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"
+          ><mtext>Income</mtext><mfenced><mtext>typed</mtext></mfenced
+          ><mo>&#8594;</mo><mo>(</mo><mn>100</mn><mo>+</mo><mn>48</mn><mo>)</mo><mo>%</mo><mo>=</mo><mn>148</mn><mo>%</mo><mspace linebreak="newline"></mspace><mtext>Income</mtext
+          ><mfenced><mtext>extra</mtext></mfenced
+          ><mo>&#8594;</mo><mn>148</mn><mo>%</mo><mo>-</mo><mn>134</mn><mo>%</mo><mo>=</mo><mn>14</mn><mo>%</mo
+          ><mfenced
+            ><mrow
+              ><mtext>each</mtext><mfenced><mtext>month</mtext></mfenced></mrow
+            ></mfenced
+          ><mspace linebreak="newline"></mspace><mn>4</mn><mfenced><mtext>month</mtext></mfenced
+          ><mo>&#8594;</mo><mn>4</mn><mo>&#215;</mo><mn>14</mn><mo>%</mo><mo>=</mo><mn>56</mn><mo>%</mo><mspace linebreak="newline"></mspace><mn>134</mn><mo>%</mo><mo>-</mo
+          ><mn>56</mn><mo>%</mo><mo>=</mo><mn>78</mn><mo>%</mo><mspace linebreak="newline"></mspace><mn>78</mn><mo>%</mo><mo>=</mo><mn>15600</mn
+          ><mspace linebreak="newline"></mspace><mn>1</mn><mo>%</mo><mo>=</mo><mn>200</mn><mspace linebreak="newline"></mspace><mn>134</mn><mo>%</mo><mo>=</mo><mn>134</mn
+          ><mo>&#215;</mo><mn>200</mn><mo>=</mo><mn>26800</mn><mo>.</mo></math
+        >
+      </p>
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>I</mi><mi>n</mi><mi>c</mi><mi>o</mi><mi>m</mi><mi>e</mi><mo>&#8594;</mo><mn>100</mn><mo>%</mo></math>
+      </p>
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"
+          ><mtext>Income</mtext><mfenced><mtext>new</mtext></mfenced
+          ><mo>&#8594;</mo><mo>(</mo><mn>100</mn><mo>+</mo><mn>34</mn><mo>)</mo><mo>%</mo><mo>=</mo><mn>134</mn><mo>%</mo></math
+        >
+      </p>
+    </my-angular-mathjax> -->
+
+    <my-angular-mathjax content="A useful relation in many CS contexts is that, for \(n \ge 0\), \[\sum_{i=0}^n i = \frac{n(n+1)}{2}.\]">
+      <div>कहुसबोो पागाल हाि, चहोति सि मोति सि</div>
+    </my-angular-mathjax>
+
+    <my-angular-mathjax>
+      <p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"
+          ><mi>A</mi><mi>c</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>d</mi><mi>i</mi><mi>n</mi><mi>g</mi><mo>&#160;</mo><mi>t</mi><mi>o</mi><mo>&#160;</mo><mi>N</mi><mi>e</mi><mi>w</mi
+          ><mi>t</mi><mi>o</mi><mi>n</mi><mo>'</mo><mi>s</mi><mo>&#160;</mo><mi>s</mi><mi>e</mi><mi>c</mi><mi>o</mi><mi>n</mi><mi>d</mi><mo>&#160;</mo><mi>l</mi><mi>a</mi><mi>w</mi
+          ><mo>&#160;</mo><mi>o</mi><mi>f</mi><mo>&#160;</mo><mi>m</mi><mi>o</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo>,</mo><mo>&#160;</mo
+          ><mspace linebreak="newline"></mspace><mi>a</mi><mo>=</mo><mo>&#8722;</mo><mi>F</mi><mo>/</mo><mi>m</mi><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>(</mo
+          ><mo>&#8722;</mo><mi>v</mi><mi>e</mi><mo>&#160;</mo><mi>s</mi><mi>i</mi><mi>g</mi><mi>n</mi><mo>&#160;</mo><mi>a</mi><mi>s</mi><mo>&#160;</mo><mi>t</mi><mi>h</mi
+          ><mi>e</mi><mo>&#160;</mo><mi>f</mi><mi>o</mi><mi>r</mi><mi>c</mi><mi>e</mi><mo>&#160;</mo><mi>i</mi><mi>s</mi><mo>&#160;</mo><mi>r</mi><mi>e</mi><mi>t</mi><mi>a</mi
+          ><mi>r</mi><mi>d</mi><mi>i</mi><mi>n</mi><mi>g</mi><mo>)</mo><mo>&#160;</mo><mo>&#160;</mo><mspace linebreak="newline"></mspace><mi>A</mi><mi>c</mi><mi>c</mi><mi>o</mi
+          ><mi>r</mi><mi>d</mi><mi>i</mi><mi>n</mi><mi>g</mi><mo>&#160;</mo><mi>t</mi><mi>o</mi><mo>&#160;</mo><mi>t</mi><mi>h</mi><mi>i</mi><mi>r</mi><mi>d</mi><mo>&#160;</mo
+          ><mi>e</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo>&#160;</mo><mi>o</mi><mi>f</mi><mo>&#160;</mo><mi>m</mi><mi>o</mi><mi>t</mi><mi>i</mi
+          ><mi>o</mi><mi>n</mi><mo>,</mo><mspace linebreak="newline"></mspace><mo>&#160;</mo
+          ><msup
+            ><mi>v</mi><mrow><mo>&#160;</mo><mn>2</mn></mrow></msup
+          ><mo>=</mo><msup><mi>u</mi><mn>2</mn></msup
+          ><mo>+</mo><mn>2</mn><mi>a</mi><mi>s</mi><mspace linebreak="newline"></mspace><mo>&#160;</mo><mi>G</mi><mi>i</mi><mi>v</mi><mi>e</mi><mi>n</mi><mo>&#160;</mo><mi>f</mi
+          ><mi>o</mi><mi>r</mi><mo>&#160;</mo><mi>v</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>u</mi><mo>=</mo><mi>u</mi><mo>,</mo><mspace linebreak="newline"></mspace><mo>&#160;</mo
+          ><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo
+          ><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mi>D</mi><mi>i</mi><mi>s</mi><mi>p</mi><mi>l</mi><mi>a</mi
+          ><mi>c</mi><mi>e</mi><mi>m</mi><mi>e</mi><mi>n</mi><mi>t</mi><mo>&#160;</mo><mi>i</mi><mi>s</mi><mo>&#160;</mo><msub><mi>s</mi><mn>1</mn></msub
+          ><mo>&#160;</mo><mo>&#8203;</mo><mo>&#160;</mo><mo>&#160;</mo><mspace linebreak="newline"></mspace><mo>&#160;</mo><mo>&#10233;</mo><msub><mi>s</mi><mn>1</mn></msub
+          ><mo>=</mo
+          ><mfrac
+            ><msup><mi>u</mi><mn>2</mn></msup
+            ><mrow><mn>2</mn><mi>a</mi></mrow></mfrac
+          ><mo>=</mo
+          ><mfrac
+            ><mrow
+              ><msup><mi>u</mi><mn>2</mn></msup
+              ><mi>m</mi></mrow
+            ><mrow><mn>2</mn><mi>F</mi></mrow></mfrac
+          ><mo>&#160;</mo><mo>&#8203;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo
+          ><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>(</mo><mi>i</mi><mo>)</mo><mo>&#160;</mo><mo>&#160;</mo><mspace linebreak="newline"></mspace><mi>G</mi
+          ><mi>i</mi><mi>v</mi><mi>e</mi><mi>n</mi><mo>&#160;</mo><mi>f</mi><mi>o</mi><mi>r</mi><mo>&#160;</mo><mi>s</mi><mi>e</mi><mi>c</mi><mi>o</mi><mi>n</mi><mi>d</mi
+          ><mo>&#160;</mo><mi>s</mi><mi>c</mi><mi>e</mi><mi>n</mi><mi>a</mi><mi>r</mi><mi>i</mi><mi>o</mi><mo>,</mo><mspace linebreak="newline"></mspace><mo>&#160;</mo
+          ><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo
+          ><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mi>v</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>u</mi><mo>=</mo><mn>2</mn><mi>u</mi
+          ><mo>,</mo><mo>&#160;</mo><mo>&#160;</mo><mspace linebreak="newline"></mspace><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo
+          ><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mi>D</mi><mi>i</mi
+          ><mi>s</mi><mi>p</mi><mi>l</mi><mi>a</mi><mi>c</mi><mi>e</mi><mi>m</mi><mi>e</mi><mi>n</mi><mi>t</mi><mo>&#160;</mo><mi>i</mi><mi>s</mi><mo>&#160;</mo
+          ><msub
+            ><mi>s</mi><mrow><mo>&#160;</mo><mn>2</mn></mrow></msub
+          ><mo>&#160;</mo><mo>&#160;</mo><mo>&#8203;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>&#160;</mo><mspace linebreak="newline"></mspace><mo>&#10233;</mo
+          ><msub><mi>s</mi><mn>2</mn></msub
+          ><mo>=</mo><mo>&#160;</mo><mo>&#160;</mo
+          ><mfrac
+            ><msup
+              ><mrow><mo>(</mo><mn>2</mn><mi>u</mi><mo>)</mo></mrow
+              ><mn>2</mn></msup
+            ><mrow><mn>2</mn><mi>a</mi></mrow></mfrac
+          ><mo>=</mo><mo>&#160;</mo
+          ><mfrac
+            ><mrow
+              ><mn>2</mn><msup><mi>u</mi><mn>2</mn></msup
+              ><mi>m</mi></mrow
+            ><mi>F</mi></mfrac
+          ><mo>&#160;</mo><mo>&#160;</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>.</mo
+          ><mo>.</mo><mo>.</mo><mo>(</mo><mi>i</mi><mi>i</mi><mo>)</mo><mo>&#160;</mo><mspace linebreak="newline"></mspace><mo>&#160;</mo><mi>F</mi><mi>r</mi><mi>o</mi><mi>m</mi
+          ><mo>&#160;</mo><mo>(</mo><mi>i</mi><mo>)</mo><mo>&#160;</mo><mi>a</mi><mi>n</mi><mi>d</mi><mo>&#160;</mo><mo>(</mo><mi>i</mi><mi>i</mi><mo>)</mo><mo>,</mo><mo>&#160;</mo
+          ><mspace linebreak="newline"></mspace
+          ><msub
+            ><mi>s</mi><mrow><mo>&#160;</mo><mn>2</mn></mrow></msub
+          ><mo>&#160;</mo><mo>&#8203;</mo><mo>&#160;</mo><mo>&#160;</mo><mo>=</mo><mn>4</mn><msub><mi>s</mi><mn>1</mn></msub
+          ><mspace linebreak="newline"></mspace><mi>H</mi><mi>e</mi><mi>n</mi><mi>c</mi><mi>e</mi><mo>&#160;</mo><mi>o</mi><mi>p</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi
+          ><mo>&#160;</mo><mi>D</mi><mo>&#160;</mo><mi>i</mi><mi>s</mi><mo>&#160;</mo><mi>c</mi><mi>o</mi><mi>r</mi><mi>r</mi><mi>e</mi><mi>c</mi><mi>t</mi><mo>&#160;</mo
+          ><mo>&#8203;</mo></math
+        >
+      </p>
+    </my-angular-mathjax>
   </body>
 </html>

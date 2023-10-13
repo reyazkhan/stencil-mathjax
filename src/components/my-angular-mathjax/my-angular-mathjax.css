@@ -1,0 +1,25 @@
+:host {
+  display: block;
+}
+/* Add this style to your my-angular-mathjax.css file */
+/* #math-content {
+  background-color: rgb(207, 199, 215);
+  display: block;
+  max-width: 100%; 
+  margin: 0 auto; 
+}
+
+#math-content p {
+  max-width: 100%; 
+  margin-bottom: 1em; 
+}
+
+#math-content {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#math-content p {
+  max-width: 100%;
+  word-wrap: break-word;
+} */
